@@ -1,0 +1,27 @@
+package net.oaster2000.sin.graphics;
+
+public class Screen {
+	
+	public int width, height;
+	public int[] pixels;
+	public final int Map_Size = 32;
+	public final int Map_Size_Mask = Map_Size - 1;
+	public int[] tiles = new int[Map_Size * Map_Size];
+	public int xOffset, yOffset;
+		
+	public Screen(int width, int height) {
+		this.width = width;
+		this.height = height;
+		pixels = new int[width * height];
+	}
+	
+	public void clear() {
+		for(int i = 0; i < pixels.length; i++){
+			pixels[i] = 0;
+		}
+	}	
+	
+	public void renderBlock() {
+		
+	}
+}

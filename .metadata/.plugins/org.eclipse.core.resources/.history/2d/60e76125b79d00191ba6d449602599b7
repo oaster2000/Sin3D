@@ -1,0 +1,55 @@
+package net.oaster2000.sin.util;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+
+import javax.swing.text.html.parser.Entity;
+
+public class SavingUtil {
+
+	public static void saveChunk(int xPos, int yPos) {
+		try {
+			File f = new File("data/house_" + xPos + "" + hut.y + ".jpu");
+			if (!f.exists())
+				f.createNewFile();
+			OutputStreamWriter stream = new OutputStreamWriter(new FileOutputStream(f));
+			stream.flush();
+
+			stream.write("Entities:");
+			stream.append('\n');
+
+			for (Entity ent : entities) {
+				if(ent instanceof ScienceEntity) {
+					ScienceEntity scie = (ScienceEntity) ent;
+					stream.write(scie.id + "," + scie.x + "," + scie.y + "," + scie.diff);
+				}else {
+					stream.write(ent.id + "," + ent.x + "," + ent.y);
+				}
+				stream.append('\n');
+			}
+
+			stream.write("Mobs:");
+			stream.append('\n');
+
+			for (Mob ent : mobs) {
+				if (!(ent instanceof Player)) {
+					if (ent instanceof Human) {
+						Human hum = (Human) ent;
+						stream.write(hum.id + "," + hum.x + "," + hum.y + "," + hum.type);
+					}else {
+						stream.write(ent.id + "," + ent.x + "," + ent.y);
+					}
+					stream.append('\n');
+				}
+			}
+			stream.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		NumOfHouses++;
+
+	}
+	
+}

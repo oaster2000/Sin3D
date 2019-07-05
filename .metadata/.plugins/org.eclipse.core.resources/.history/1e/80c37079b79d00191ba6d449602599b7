@@ -1,0 +1,11 @@
+package net.oaster2000.sin.level;
+
+public class World {
+
+	public int chunk_radius = 4;
+	
+	public World() {
+		
+	}
+	
+}

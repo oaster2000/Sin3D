@@ -1,0 +1,7 @@
+package net.oaster2000.sin3d.input;
+
+import java.awt.event.KeyListener;
+
+public class InputHandler implements KeyListener{
+
+}

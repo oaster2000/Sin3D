@@ -1,0 +1,9 @@
+package net.oaster2000.sin3d;
+
+public class Game {
+	public int time;
+	
+	public void tick() {
+		time+=4;
+	}
+}

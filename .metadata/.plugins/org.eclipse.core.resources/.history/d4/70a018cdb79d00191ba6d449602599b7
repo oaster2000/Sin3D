@@ -1,0 +1,22 @@
+package net.oaster2000.sin.level;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class World {
+
+	public List<Chunk> chunks = new ArrayList<Chunk>();
+	
+	public int chunks_in_world = 9;
+	
+	public World() {
+		initializeWorld();
+	}
+
+	private void initializeWorld() {
+		for(int i = 0; i < chunks_in_world; i++) {
+			
+		}
+	}
+	
+}

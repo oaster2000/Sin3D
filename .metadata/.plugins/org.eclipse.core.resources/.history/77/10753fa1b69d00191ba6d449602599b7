@@ -1,0 +1,5 @@
+package net.oaster2000.sin.level;
+
+public class Chunk {
+	
+}

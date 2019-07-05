@@ -1,0 +1,30 @@
+package net.oaster2000.sin3d.graphics;
+
+import java.util.Random;
+
+import net.oaster2000.sin3d.Game;
+
+public class Screen extends Render {
+
+	private Render3D render;
+
+	public Screen(int width, int height) {
+		super(width, height);
+		Random rand = new Random();
+		render = new Render3D(width, height);
+	}
+
+	public void clear() {
+		for (int i = 0; i < width * height; i++) {
+			pixels[i] = 0;
+		}
+	}
+
+	public void render(Game game) {
+		clear();
+		
+		render.floor(game);
+		draw(render, 0, 0);
+	}
+
+}
